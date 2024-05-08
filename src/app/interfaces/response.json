@@ -1,0 +1,76 @@
+{
+    "items": [
+      
+      {
+        "timestamp": "2024-02-21T06:38:11.000000Z",
+        "fee": {
+          "type": "actual",
+          "value": "552374957337000"
+        },
+        "gas_limit": "21000",
+        "block": 19274303,
+        "status": "ok",
+        "method": null,
+        "confirmations": 547789,
+        "type": 2,
+        "exchange_rate": "3021.84",
+        "to": {
+          "ens_domain_name": null,
+          "hash": "0x7b9a421575f72D17331CA7433aeA46eC5d5B2739",
+          "implementation_name": null,
+          "is_contract": false,
+          "is_verified": false,
+          "metadata": null,
+          "name": null,
+          "private_tags": [],
+          "public_tags": [],
+          "watchlist_names": []
+        },
+        "tx_burnt_fee": "552147318807000",
+        "max_fee_per_gas": "42123555697",
+        "result": "success",
+        "hash": "0xb705dce2f63bec6b6acd82f28c4803e69fabbb51ff563e059f5af3aa25bf849a",
+        "gas_price": "26303569397",
+        "priority_fee": "227638530000",
+        "base_fee_per_gas": "26292729467",
+        "from": {
+          "ens_domain_name": null,
+          "hash": "0x7b9a421575f72D17331CA7433aeA46eC5d5B2739",
+          "implementation_name": null,
+          "is_contract": false,
+          "is_verified": false,
+          "metadata": null,
+          "name": null,
+          "private_tags": [],
+          "public_tags": [],
+          "watchlist_names": []
+        },
+        "token_transfers": null,
+        "tx_types": [
+          "coin_transfer"
+        ],
+        "gas_used": "21000",
+        "created_contract": null,
+        "position": 368,
+        "nonce": 17,
+        "has_error_in_internal_txs": false,
+        "actions": [],
+        "decoded_input": null,
+        "token_transfers_overflow": null,
+        "raw_input": "0x",
+        "value": "1939000000000000",
+        "max_priority_fee_per_gas": "10839930",
+        "revert_reason": null,
+        "confirmation_duration": [
+          0,
+          12121
+        ],
+        "tx_tag": null
+      }
+      
+    ],
+    "next_page_params": null
+  }
+
+
+ 
