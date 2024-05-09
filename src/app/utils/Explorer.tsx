@@ -123,3 +123,24 @@ export async function getBlockInfo(input: string, limit: number = 50, page: numb
         // try backup data source
     }
 }
+
+export async function search(query: string, limit: number = 50, page: number = 1 ): Promise<any> {
+    // input should be block number or blockhash
+    try {
+        const endpoint = `/search?q=${query}`;
+        // Replace this URL with your data source URL
+        const url = `${baseUrlMain}${endpoint}`;
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data);
+        
+        return data.items.slice(0, limit);
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        // try backup data source
+    }
+}
