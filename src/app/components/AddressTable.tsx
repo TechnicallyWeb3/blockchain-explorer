@@ -1,16 +1,25 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { getTransactionsOfAddress } from '../utils/Explorer';
+import { 
+    getAddressTransactions, 
+    getAddressERC20Transfers, 
+    getAddressNFTTransfers, 
+    getAddressInternalTransactions,
+    getBlockTransactions,
+    getBlockInfo
+} from '../utils/Explorer';
 import { Blockscout } from '../interfaces/Blockscout';
 
 // Define the props interface
 interface AddressTableProps {
     initialAddress?: string; // Optional prop for initial address
+    blockNumberOrHash?: string;
 }
 
-const AddressTable: React.FC<AddressTableProps> = ({ initialAddress }) => {
+const AddressTable: React.FC<AddressTableProps> = ({ initialAddress, blockNumberOrHash }) => {
     // State variables
     const [address, setAddress] = useState<string>(initialAddress ?? '');
+    const [block, setBlock] = useState<string>(blockNumberOrHash ?? '');
     const [numRecords, setNumRecords] = useState<number>(25);
     const [transactions, setTransactions] = useState<Blockscout.Transaction[] | undefined>([]);
 
@@ -18,9 +27,17 @@ const AddressTable: React.FC<AddressTableProps> = ({ initialAddress }) => {
     const fetchData = async () => {
         try {
             if (initialAddress) {
-                const data = await getTransactionsOfAddress(initialAddress);
+                const data = await getAddressTransactions(initialAddress);
                 setTransactions(data);
+                // console.log(data);
+                console.log(await getAddressInternalTransactions(initialAddress));
+                console.log(await getAddressERC20Transfers(initialAddress));
+                console.log(await getAddressNFTTransfers(initialAddress));
                 console.log(data);
+            }
+            if (blockNumberOrHash) {
+                console.log(await getBlockTransactions(blockNumberOrHash));
+                console.log(await getBlockInfo(blockNumberOrHash));
             }
             console.log(transactions);
         } catch (error) {

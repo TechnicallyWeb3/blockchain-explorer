@@ -21,6 +21,7 @@ export namespace Blockscout {
 
     // Define the AddressParam interface
     export interface AddressParam {
+        ens_domain_name?: string; // example: technicallyweb3.eth
         hash: string; // example: "0xEb533ee5687044E622C69c58B1B12329F56eD9ad"
         implementation_name?: string; // example: "implementationName"
         name?: string; // example: "contractName"
